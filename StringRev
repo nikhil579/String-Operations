@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Main {
     public String reverse(String input) {
         String output = "";
@@ -29,6 +27,17 @@ class Main {
         }
 
         return output.toString().trim();
+    }
+
+    public static int countWords(String str, String str2) {
+        String[] words = str.split(" ");
+        int count = 0;
+        for (int i = 0; i < words.length - 1; i++) {
+            if (str2.equals(words[i])) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static void main(String args[]) {

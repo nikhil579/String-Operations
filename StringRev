@@ -1,0 +1,43 @@
+import java.util.*;
+
+class Main {
+    public String reverse(String input) {
+        String output = "";
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            output = output + input.charAt(i);
+        }
+
+        return output;
+    }
+
+    public String reverseUsingStringBuilder(String input) {
+        // StringBuilder output = new StringBuilder(input).reverse();
+        // return output.toString();
+        StringBuilder output = new StringBuilder();
+        output.append(input).reverse();
+        return output.toString();
+    }
+
+    public String reverseTheOrderOfWords(String sentence) {
+        StringBuilder output = new StringBuilder();
+        String[] words = sentence.split(" ");
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            output.append(words[i]);
+            output.append(" ");
+        }
+
+        return output.toString().trim();
+    }
+
+    public static void main(String args[]) {
+        String s1 = "Geeks For Nicks";
+        Main obj = new Main();
+        String op = obj.reverseUsingStringBuilder(s1);
+        String ord = obj.reverseTheOrderOfWords(s1);
+        System.out.println("String: " + op);
+        System.out.println("String: " + ord);
+    }
+
+}
